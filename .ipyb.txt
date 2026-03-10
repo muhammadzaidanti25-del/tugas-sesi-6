@@ -1,0 +1,348 @@
+# Soal 1: Klasifikasi Usia
+# SOAL 1: Menentukan kategori usia
+print("=" * 50)
+print("PROGRAM KLASIFIKASI USIA")
+print("=" * 50)
+
+usia = int(input("Masukkan usia Anda: "))
+
+if usia >= 0 and usia <= 12:
+    print(f"Usia {usia} tahun: ANAK-ANAK")
+elif usia >= 13 and usia <= 17:
+    print(f"Usia {usia} tahun: REMAJA")
+elif usia >= 18 and usia <= 59:
+    print(f"Usia {usia} tahun: DEWASA")
+elif usia >= 60:
+    print(f"Usia {usia} tahun: LANSIA")
+else:
+    print("Usia tidak valid!")
+
+# SOAL 2: Menghitung total harga tiket
+print("\n" + "=" * 50)
+print("PROGRAM TIKET TAMAN HIBURAN")
+print("=" * 50)
+
+tiket1 = int(input("Isikan Umur Tiket 1: "))
+tiket2 = int(input("Isikan Umur Tiket 2: "))
+tiket3 = int(input("Isikan Umur Tiket 3: "))
+
+total_harga = 0
+
+# Fungsi untuk menentukan harga berdasarkan umur
+def hitung_harga(umur):
+    if umur >= 0 and umur <= 12:
+        return 10000
+    elif umur >= 13 and umur <= 17:
+        return 15000
+    elif umur >= 18 and umur <= 59:
+        return 25000
+    elif umur >= 60:
+        return 0
+    else:
+        print(f"Umur {umur} tidak valid!")
+        return 0
+
+# Hitung harga masing-masing tiket
+harga1 = hitung_harga(tiket1)
+harga2 = hitung_harga(tiket2)
+harga3 = hitung_harga(tiket3)
+
+total_harga = harga1 + harga2 + harga3
+
+print("\n" + "-" * 50)
+print("RINCIAN HARGA TIKET")
+print("-" * 50)
+print(f"Tiket 1 (Umur {tiket1} tahun): Rp {harga1:,}")
+print(f"Tiket 2 (Umur {tiket2} tahun): Rp {harga2:,}")
+print(f"Tiket 3 (Umur {tiket3} tahun): Rp {harga3:,}")
+print("-" * 50)
+print(f"TOTAL HARGA: Rp {total_harga:,}")
+print("=" * 50)
+
+# SOAL 3: Diskon restoran berdasarkan usia
+print("\n" + "=" * 50)
+print("PROGRAM DISKON RESTORAN")
+print("=" * 50)
+
+usia = int(input("Masukkan usia pelanggan: "))
+harga_makanan = float(input("Masukkan total harga makanan: Rp "))
+
+if usia >= 0 and usia <= 12:
+    diskon = 0.5  # 50%
+    keterangan = "Anak-anak (diskon 50%)"
+elif usia >= 60:
+    diskon = 0.3  # 30%
+    keterangan = "Lansia (diskon 30%)"
+else:
+    diskon = 0
+    keterangan = "Tidak ada diskon"
+
+harga_setelah_diskon = harga_makanan * (1 - diskon)
+
+print("\n" + "-" * 50)
+print("HASIL PERHITUNGAN")
+print("-" * 50)
+print(f"Usia pelanggan: {usia} tahun")
+print(f"Kategori: {keterangan}")
+print(f"Harga awal: Rp {harga_makanan:,.0f}")
+if diskon > 0:
+    print(f"Diskon: {diskon*100:.0f}%")
+    print(f"Harga setelah diskon: Rp {harga_setelah_diskon:,.0f}")
+else:
+    print(f"Total bayar: Rp {harga_setelah_diskon:,.0f}")
+print("=" * 50)
+
+# SOAL 4: Program Beasiswa
+print("\n" + "=" * 50)
+print("PROGRAM BEASISWA")
+print("=" * 50)
+
+nilai = float(input("Masukkan nilai rapor: "))
+penghasilan = float(input("Masukkan penghasilan orang tua (Rp): "))
+
+if nilai >= 90 and penghasilan < 5000000:
+    print("\nHASIL: BEASISWA PENUH")
+    print("Selamat! Anda mendapatkan beasiswa penuh.")
+elif nilai >= 85 and penghasilan < 8000000:
+    print("\nHASIL: BEASISWA 50%")
+    print("Selamat! Anda mendapatkan beasiswa 50%.")
+else:
+    print("\nHASIL: TIDAK MENDAPATKAN BEASISWA")
+    print("Maaf, Anda belum memenuhi syarat beasiswa.")
+
+# SOAL 5: Batasan Usia Film Streaming
+print("\n" + "=" * 50)
+print("APLIKASI STREAMING - CEK BATASAN USIA")
+print("=" * 50)
+
+usia = int(input("Masukkan usia Anda: "))
+
+print("\nPilih kategori film:")
+print("1. Semua Umur")
+print("2. Remaja")
+print("3. Dewasa")
+pilihan = input("Masukkan pilihan (1/2/3): ")
+
+if pilihan == "1":
+    print("\nHASIL: BOLEH MENONTON")
+    print("Film Semua Umur dapat ditonton oleh siapa saja.")
+elif pilihan == "2":
+    if usia >= 13:
+        print("\nHASIL: BOLEH MENONTON")
+        print("Film Remaja boleh ditonton karena usia Anda ≥ 13 tahun.")
+    else:
+        print("\nHASIL: TIDAK BOLEH MENONTON")
+        print("Film Remaja hanya untuk usia 13 tahun ke atas.")
+elif pilihan == "3":
+    if usia >= 18:
+        print("\nHASIL: BOLEH MENONTON")
+        print("Film Dewasa boleh ditonton karena usia Anda ≥ 18 tahun.")
+    else:
+        print("\nHASIL: TIDAK BOLEH MENONTON")
+        print("Film Dewasa hanya untuk usia 18 tahun ke atas.")
+else:
+    print("Pilihan tidak valid!")
+
+# SOAL 6: Diskon berdasarkan total belanja
+print("\n" + "=" * 50)
+print("PROGRAM DISKON TOKO")
+print("=" * 50)
+
+total_belanja = float(input("Masukkan total belanja: Rp "))
+
+if total_belanja >= 500000:
+    diskon = 0.2  # 20%
+    keterangan = "Diskon 20%"
+elif total_belanja >= 250000:
+    diskon = 0.1  # 10%
+    keterangan = "Diskon 10%"
+else:
+    diskon = 0
+    keterangan = "Tidak ada diskon"
+
+harga_akhir = total_belanja * (1 - diskon)
+
+print("\n" + "-" * 50)
+print("HASIL PERHITUNGAN")
+print("-" * 50)
+print(f"Total belanja: Rp {total_belanja:,.0f}")
+print(f"{keterangan}")
+if diskon > 0:
+    print(f"Jumlah diskon: Rp {total_belanja * diskon:,.0f}")
+print(f"Total yang harus dibayar: Rp {harga_akhir:,.0f}")
+print("=" * 50)
+
+
+# SOAL 7: Biaya Parkir
+print("\n" + "=" * 50)
+print("PROGRAM PARKIR")
+print("=" * 50)
+
+print("Pilih jenis kendaraan:")
+print("1. Mobil")
+print("2. Motor")
+jenis = input("Masukkan pilihan (1/2): ")
+
+durasi = int(input("Masukkan durasi parkir (jam): "))
+
+if jenis == "1":  # Mobil
+    tarif_per_jam = 5000
+    jenis_kendaraan = "Mobil"
+elif jenis == "2":  # Motor
+    tarif_per_jam = 2000
+    jenis_kendaraan = "Motor"
+else:
+    print("Jenis kendaraan tidak valid!")
+    tarif_per_jam = 0
+    jenis_kendaraan = "Tidak valid"
+
+if tarif_per_jam > 0:
+    biaya_dasar = tarif_per_jam * durasi
+    
+    if durasi > 5:
+        biaya_tambahan = 10000
+        keterangan = f"(lebih dari 5 jam, +Rp 10.000)"
+    else:
+        biaya_tambahan = 0
+        keterangan = ""
+    
+    total_biaya = biaya_dasar + biaya_tambahan
+    
+    print("\n" + "-" * 50)
+    print("RINCIAN BIAYA PARKIR")
+    print("-" * 50)
+    print(f"Jenis kendaraan: {jenis_kendaraan}")
+    print(f"Durasi parkir: {durasi} jam")
+    print(f"Tarif per jam: Rp {tarif_per_jam:,}")
+    print(f"Biaya dasar: Rp {biaya_dasar:,}")
+    if biaya_tambahan > 0:
+        print(f"Biaya tambahan: Rp {biaya_tambahan:,} {keterangan}")
+    print(f"TOTAL BIAYA: Rp {total_biaya:,}")
+    print("=" * 50)
+
+
+# SOAL 8: Tarif Transportasi Online
+print("\n" + "=" * 50)
+print("PROGRAM TARIF TRANSPORTASI ONLINE")
+print("=" * 50)
+
+jarak = float(input("Masukkan jarak perjalanan (km): "))
+
+if jarak <= 5:
+    tarif_per_km = 5000
+    keterangan = "Jarak ≤ 5 km (Rp 5.000/km)"
+elif jarak <= 10:
+    tarif_per_km = 4000
+    keterangan = "Jarak 6-10 km (Rp 4.000/km)"
+else:
+    tarif_per_km = 3000
+    keterangan = "Jarak > 10 km (Rp 3.000/km)"
+
+total_tarif = jarak * tarif_per_km
+
+print("\n" + "-" * 50)
+print("HASIL PERHITUNGAN")
+print("-" * 50)
+print(f"Jarak: {jarak:.1f} km")
+print(f"Tarif per km: Rp {tarif_per_km:,}")
+print(f"Keterangan: {keterangan}")
+print(f"TOTAL TARIF: Rp {total_tarif:,.0f}")
+print("=" * 50)
+
+
+# SOAL 9: Sistem Penerimaan Calon Programmer
+print("\n" + "=" * 50)
+print("SISTEM PENERIMAAN CALON PROGRAMMER")
+print("=" * 50)
+
+# Input nilai coding
+nilai_coding = float(input("Masukkan nilai coding (0-100): "))
+
+# Penentuan hasil tes coding
+if nilai_coding > 80:
+    hasil_coding = "LOLOS"
+    keterangan_coding = "LOLOS (nilai > 80)"
+elif nilai_coding >= 60:
+    hasil_coding = "DIPERTIMBANGKAN"
+    keterangan_coding = "DIPERTIMBANGKAN (60-80)"
+else:
+    hasil_coding = "GAGAL"
+    keterangan_coding = "GAGAL (nilai < 60)"
+
+print(f"Hasil tes coding: {keterangan_coding}")
+
+# Input nilai interview (hanya jika lolos syarat coding)
+if hasil_coding == "LOLOS" or hasil_coding == "DIPERTIMBANGKAN":
+    nilai_interview = input("Masukkan nilai interview (A/B/C/D): ").upper()
+
+    if nilai_interview == "A" or nilai_interview == "B":
+        hasil_interview = "LOLOS"
+        print(f"Hasil interview: LOLOS (nilai {nilai_interview})")
+    else:
+        hasil_interview = "GAGAL"
+        print(f"Hasil interview: GAGAL (nilai {nilai_interview})")
+
+    # Penentuan akhir
+    if hasil_interview == "LOLOS":
+        print("\n" + "=" * 50)
+        print("Selamat Kamu Berhasil Menjadi Calon Programmer! 🎉")
+        print("=" * 50)
+    else:
+        print("\n" + "=" * 50)
+        print("Maaf Kamu Belum Berhasil Menjadi Calon Programmer.")
+        print("=" * 50)
+else:
+    print("\nHasil interview: TIDAK DILANJUTKAN")
+    print("=" * 50)
+    print("Maaf Kamu Belum Berhasil Menjadi Calon Programmer.")
+    print("=" * 50)
+
+
+# SOAL 10: Nomor Punggung Pemain PERSEGI FC
+print("\n" + "=" * 50)
+print("PENENTUAN POSISI PEMAIN PERSEGI FC")
+print("Berdasarkan Nomor Punggung")
+print("=" * 50)
+
+nomor = int(input("Masukkan nomor punggung pemain: "))
+
+print(f"\nNomor punggung: {nomor}")
+print("-" * 50)
+print("POSISI YANG DAPAT DITEMPATI:")
+print("-" * 50)
+
+posisi = []
+
+# Cek genap/ganjil
+if nomor % 2 == 0:
+    # Genap: target attacker
+    posisi.append("Target Attacker")
+    print("✓ Target Attacker (nomor genap)")
+    
+    # Genap antara 50-100: berhak jadi kapten
+    if nomor >= 50 and nomor <= 100:
+        posisi.append("Berhak dipilih menjadi Captain Team")
+        print("✓ Berhak dipilih menjadi Captain Team (genap 50-100)")
+else:
+    # Ganjil: defender
+    posisi.append("Defender")
+    print("✓ Defender (nomor ganjil)")
+    
+    # Ganjil > 90: playmaker
+    if nomor > 90:
+        posisi.append("Playmaker")
+        print("✓ Playmaker (ganjil > 90)")
+    
+    # Ganjil kelipatan 3 dan 5 (kelipatan 15): keeper
+    if nomor % 3 == 0 and nomor % 5 == 0:
+        posisi.append("Keeper")
+        print("✓ Keeper (ganjil kelipatan 3 dan 5)")
+
+print("-" * 50)
+if len(posisi) > 0:
+    print(f"Pemain bernomor {nomor} dapat berperan sebagai:")
+    for i, p in enumerate(posisi, 1):
+        print(f"  {i}. {p}")
+else:
+    print("Tidak ada posisi khusus untuk nomor ini.")
+print("=" * 50)
